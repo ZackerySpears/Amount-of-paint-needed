@@ -1,5 +1,6 @@
 package getAmountOfPaintNeeded;
 import java.util.Scanner;
+import java.lang.Math;
 
 public class Paint1 {
 
@@ -9,8 +10,10 @@ public class Paint1 {
         double wallWidth = 0.0;
         double wallArea = 0.0;
         double gallonsPaintNeeded = 0.0;
+		double cansNeeded = 0.0;
         
         final double squareFeetPerGallons = 350.0;
+		final double gallonsPerCan = 1.0;
         
         //Added a do while loop to check the wall height
         do {
@@ -52,6 +55,13 @@ public class Paint1 {
         // Calculate and output the amount of paint (in gallons) needed to paint the wall
         gallonsPaintNeeded = wallArea/squareFeetPerGallons;
         System.out.println("Paint needed: " + gallonsPaintNeeded + " gallons");
+
+		//Get the amount of canned paint needed 
+		cansNeeded = (Math.ceil(gallonsPaintNeeded)/ (Math.ceil(gallonsPerCan)));
+        
+		//Print out the total amount cans needed
+        System.out.println("The amount of cans needed is " + (int)cansNeeded);
 		scnr.close();
+        
     }
 }
